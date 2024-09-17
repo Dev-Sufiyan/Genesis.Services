@@ -19,14 +19,14 @@ jobs:
         dotnet-version: 8.0.x
     
 
-    # Restore Nuget Package From Dev-Sufiyan Packages
-    # - name: Configure NuGet to use GitHub Packages
-    #   run: |
-    #       dotnet nuget add source https://nuget.pkg.github.com/Dev-Sufiyan/index.json \
-    #       --name github \
-    #       --username Dev-Sufiyan \
-    #       --password ${{ secrets.PACKAGES_READ_TOKEN }} \
-    #       --store-password-in-clear-text
+    Restore Nuget Package From Dev-Sufiyan Packages
+    - name: Configure NuGet to use GitHub Packages
+      run: |
+          dotnet nuget add source https://nuget.pkg.github.com/Dev-Sufiyan/index.json \
+          --name github \
+          --username Dev-Sufiyan \
+          --password ${{ secrets.PACKAGES_READ_TOKEN }} \
+          --store-password-in-clear-text
 
     - name: Restore dependencies
       run: dotnet restore
@@ -35,10 +35,10 @@ jobs:
       run: dotnet build --configuration Debug
     
     - name: Test
-      run: dotnet test ./Genesis.Package.Template.Test/Genesis.Package.Template.Test.csproj --no-build --verbosity normal
+      run: dotnet test ./Genesis.Services.Test/Genesis.Services.Test.csproj --no-build --verbosity normal
 
     - name: Build for Pack
       run: dotnet build --configuration Release --no-restore
       
     - name: NuGet Pack Check
-      run: dotnet pack Genesis.Package.Template/Genesis.Package.Template.csproj --configuration Release /p:PackageVersion=0.0.0-PRCheck --output ./artifacts
+      run: dotnet pack Genesis.Services/Genesis.Services.csproj --configuration Release /p:PackageVersion=0.0.0-PRCheck --output ./artifacts

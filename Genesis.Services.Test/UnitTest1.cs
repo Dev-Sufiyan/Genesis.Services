@@ -1,4 +1,4 @@
-namespace Genesis.Package.Template.Test
+namespace Genesis.Services.Test
 {
     public class UnitTest1
     {

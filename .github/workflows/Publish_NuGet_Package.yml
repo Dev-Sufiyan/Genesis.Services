@@ -18,14 +18,14 @@ jobs:
       with:
         dotnet-version: '8.x'
 
-    # Restore Nuget Package From Dev-Sufiyan Packages
-    # - name: Configure NuGet to use GitHub Packages
-    #   run: |
-    #       dotnet nuget add source https://nuget.pkg.github.com/Dev-Sufiyan/index.json \
-    #       --name github \
-    #       --username Dev-Sufiyan \
-    #       --password ${{ secrets.PACKAGES_READ_TOKEN }} \
-    #       --store-password-in-clear-text
+    Restore Nuget Package From Dev-Sufiyan Packages
+    - name: Configure NuGet to use GitHub Packages
+      run: |
+          dotnet nuget add source https://nuget.pkg.github.com/Dev-Sufiyan/index.json \
+          --name github \
+          --username Dev-Sufiyan \
+          --password ${{ secrets.PACKAGES_READ_TOKEN }} \
+          --store-password-in-clear-text
 
     - name: Extract version from tag
       id: get_version
@@ -37,7 +37,7 @@ jobs:
       run: dotnet build --configuration Release /p:Version=${{ env.VERSION }}
 
     - name: Pack the NuGet package
-      run: dotnet pack Genesis.Package.Template/Genesis.Package.Template.csproj --configuration Release /p:PackageVersion=${{ env.VERSION }} --output ./artifacts
+      run: dotnet pack Genesis.Services/Genesis.Services.csproj --configuration Release /p:PackageVersion=${{ env.VERSION }} --output ./artifacts
 
     - name: Publish to GitHub NuGet
       run: dotnet nuget push "./artifacts/*.nupkg" --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" --api-key ${{ secrets.PAT_TOKEN }}

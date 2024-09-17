@@ -1,11 +1,11 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35208.52
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Genesis.Package.Template", "Genesis.Package.Template\Genesis.Package.Template.csproj", "{F2426417-846E-4379-9E9B-4F2ABADCB1E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Genesis.Services", "Genesis.Services\Genesis.Services.csproj", "{F2426417-846E-4379-9E9B-4F2ABADCB1E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Genesis.Package.Template.Test", "Genesis.Package.Template.Test\Genesis.Package.Template.Test.csproj", "{63A364F5-D076-4F42-BAA9-4C3D45D7563E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Genesis.Services.Test", "Genesis.Services.Test\Genesis.Services.Test.csproj", "{63A364F5-D076-4F42-BAA9-4C3D45D7563E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
