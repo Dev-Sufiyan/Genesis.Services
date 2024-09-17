@@ -19,7 +19,7 @@ jobs:
         dotnet-version: 8.0.x
     
 
-    Restore Nuget Package From Dev-Sufiyan Packages
+    # Restore Nuget Package From Dev-Sufiyan Packages
     - name: Configure NuGet to use GitHub Packages
       run: |
           dotnet nuget add source https://nuget.pkg.github.com/Dev-Sufiyan/index.json \
