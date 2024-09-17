@@ -9,4 +9,7 @@
 		<Description>Base template to create NuGet packages</Description>
 		<RepositoryUrl>https://github.com/Dev-Sufiyan/Genesis.Package.Template</RepositoryUrl>
 	</PropertyGroup>
+	<ItemGroup>
+	  <PackageReference Include="Genesis.Repositories" Version="1.0.0" />
+	</ItemGroup>
 </Project>
