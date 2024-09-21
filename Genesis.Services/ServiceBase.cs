@@ -12,7 +12,7 @@ namespace Genesis.Services
             _repository = repository;
         }
 
-        public async Task<IEnumerable<T>> GetRecordsAsync(List<SearchParam> searchParams)
+        public async Task<IEnumerable<T>> GetRecordsAsync(SearchParams searchParams)
         {
             return await _repository.GetRecordsAsync(searchParams);
         }

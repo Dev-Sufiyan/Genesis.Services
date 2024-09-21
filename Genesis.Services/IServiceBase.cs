@@ -4,7 +4,7 @@ namespace Genesis.Services
 {
     public interface IServiceBase<T> where T : class
     {
-        Task<IEnumerable<T>> GetRecordsAsync(List<SearchParam> searchParams);
+        Task<IEnumerable<T>> GetRecordsAsync(SearchParams searchParams);
         Task<T> GetByPKAsync(object keyValue);
         Task<bool> IsRecordPresentAsync(T entity);
         Task AddAsync(T entity);
